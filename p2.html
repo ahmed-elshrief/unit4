@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تلخيص الوحدة الرابعة - الصف الثالث الثانوي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .video-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1000px;
+            width: 100%;
+            position: relative;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: auto;
+        }
+
+        .protection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .info-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: rgba(37, 211, 102, 0.9);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .footer a:hover {
+            background: rgba(37, 211, 102, 1);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .video-container {
+                padding: 15px;
+            }
+        }
+
+        /* منع النقر بالزر الأيمن */
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+    
+    <div class="header">
+        <h1>📚 تلخيص الوحدة الرابعة</h1>
+        <p>الصف الثالث الثانوي</p>
+    </div>
+
+    <div class="video-container">
+        <div class="video-wrapper">
+            <div class="protection-overlay"></div>
+            <iframe 
+                id="videoFrame"
+                src=""
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="info-box">
+            <h3>📝 ملاحظات هامة:</h3>
+            <p>• يمكنك التحكم في حجم الفيديو والسرعة والجودة بشكل طبيعي</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>برمجة: Ahmed Elshrief</strong></p>
+        <a href="https://wa.me/201559775656" target="_blank">
+            <span>📱 واتساب: 01559775656</span>
+        </a>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+            جميع الحقوق محفوظة © 2025
+        </p>
+    </div>
+
+    <script>
+        // منع فتح أدوات المطور
+        (function() {
+            const devtools = /./;
+            devtools.toString = function() {
+                this.opened = true;
+            };
+            const checkDevTools = setInterval(function() {
+                console.log(devtools);
+                console.clear();
+                if (devtools.opened) {
+                    window.location.reload();
+                }
+            }, 1000);
+        })();
+
+        // منع اختصارات لوحة المفاتيح
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C / Ctrl+U
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (عرض المصدر)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (حفظ الصفحة)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // منع النقر بالزر الأيمن
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // منع السحب
+        document.addEventListener('dragstart', e => e.preventDefault());
+
+        // منع التحديد
+        document.addEventListener('selectstart', e => e.preventDefault());
+
+        // تحميل الفيديو من Google Drive
+        window.addEventListener('load', function() {
+            // رابط Google Drive الخاص بالفيديو
+            const driveUrl = 'https://drive.google.com/file/d/1GzDu1b73zO1oNR6xOZCh6ZBi0vuiPb3-/view?usp=sharing';
+            
+            // تحويل رابط Google Drive إلى صيغة التضمين المحمية
+            let embedUrl = driveUrl;
+            if (driveUrl.includes('drive.google.com/file/d/')) {
+                const fileId = driveUrl.split('/d/')[1].split('/')[0];
+                embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+            }
+            
+            document.getElementById('videoFrame').src = embedUrl;
+        });
+
+        // مراقبة محاولات فتح الفيديو في نافذة جديدة
+        const iframe = document.getElementById('videoFrame');
+        iframe.addEventListener('load', function() {
+            try {
+                iframe.contentWindow.document.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        e.preventDefault();
+                    }
+                });
+            } catch(e) {
+                // Cross-origin iframe - محمي بالفعل
+            }
+        });
+
+        // منع الطباعة
+        window.addEventListener('beforeprint', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // حماية إضافية ضد النسخ
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            e.clipboardData.setData('text/plain', 'المحتوى محمي ولا يمكن نسخه');
+        });
+
+        // منع لصق الكود في Console
+        (function() {
+            const original = console.log;
+            console.log = function() {
+                // لا تفعل شيء
+            };
+        })();
+
+        // حماية من Screenshot APIs
+        if ('getDisplayMedia' in navigator.mediaDevices) {
+            const original = navigator.mediaDevices.getDisplayMedia;
+            navigator.mediaDevices.getDisplayMedia = function() {
+                return Promise.reject(new Error('محظور'));
+            };
+        }
+    </script>
+</body>
+</html>
